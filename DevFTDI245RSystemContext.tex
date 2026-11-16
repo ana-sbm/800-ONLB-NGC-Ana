@@ -1,0 +1,29 @@
+\chapter{System Context}
+\ChapterLabel{SystemContext}
+\section{Chapter Responsibility}
+\label{Section:SystemContextResponsibility}
+Define the host-application boundary and its external dependencies.
+\noindent\textbf{Expected result:} A reviewable context with unresolved interfaces visible.
+
+\section{How to Use This Chapter}
+This is the unchanged host-application boundary confirmed by A. Crone.
+The course sensor scenario supplies context, not measured hardware evidence.
+\section{Boundary and Information Flow}
+SP800Project qualifies and publishes sensor data in a host application. The sensor
+and ADC0804 produce a conversion code; a clock/counter provides another input
+to the FT245R data path. The FT245R and host driver are external dependencies.
+The downstream consumer receives published information. The operator is an
+external stakeholder; the interaction mechanism is not yet specified.
+Figure~\ref{Figure:SP800Context} records this boundary. It does not prescribe
+a device mode, byte encoding, timing source, or hardware implementation.
+\begin{figure}[htbp]
+\centering
+\input{TikZ/DevFTDI245RSystemContext/DevFTDI245RContextDrawing.tex}
+\caption{SP800Project host-application boundary and external data path.}
+\label{Figure:SP800Context}
+\end{figure}
+\section{Interface Questions}
+Capture event, counter interpretation, pairing and byte count, driver-visible
+events, fault statuses, and consumer contract are unresolved. They are owned
+in \hyperref[Section:SP800OpenQuestions]{the open-question list}.
+No hardware acquisition timestamp or performance guarantee is claimed.

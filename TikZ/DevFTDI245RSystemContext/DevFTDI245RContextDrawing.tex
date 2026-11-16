@@ -1,0 +1,11 @@
+\begin{tikzpicture}[font=\small,box/.style={draw,rounded corners,align=center,text width=3.5cm,minimum height=1.25cm},>=Stealth]
+\node[box] (adc) at (-2.3,0) {Sensor and ADC0804};
+\node[box] (ctr) at (2.3,0) {Clock/counter};
+\node[box] (usb) at (0,-2.5) {FT245R and host driver\\External dependencies};
+\node[box,fill=DevFTDI245RLightBlue] (host) at (0,-5.2) {SP800Project host application\\Qualify and publish};
+\node[box] (sink) at (0,-7.8) {Downstream consumer};
+\draw[->] (adc.south) -- ++(0,-0.45) -| ([xshift=-0.8cm]usb.north);
+\draw[->] (ctr.south) -- ++(0,-0.45) -| ([xshift=0.8cm]usb.north);
+\draw[->] (usb) -- node[right=5pt,text width=3.2cm,align=left]{Data and transfer status} (host);
+\draw[->] (host) -- node[right=5pt,text width=3.2cm,align=left]{Qualified published data} (sink);
+\end{tikzpicture}

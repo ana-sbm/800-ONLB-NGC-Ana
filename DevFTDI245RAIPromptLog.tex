@@ -1,0 +1,52 @@
+\chapter{AI Prompt Log}
+\ChapterLabel{AIPromptLog}
+\section{Chapter Responsibility}
+\label{Section:AIPromptLogResponsibility}
+Preserve the provenance of material AI assistance and its human review.
+
+\noindent\textbf{Expected result:} An auditable account of how AI contributed to the engineering record.
+
+\section{How to Use This Appendix}
+Use this log when AI assistance materially affects requirements, architecture, code, tests, or release evidence. Record enough context for a reviewer to understand the input, output, assumptions, and human corrections.
+\section{SP800 Initialization Record}
+\label{Section:SP800InitializationLog}
+Date: November 14, 2026. Tool: OpenAI Codex; model: GPT-6.
+A. Crone instructed the agent to follow course manual version 1.24,
+Section 1.6, and confirmed SP800, filename prefix DevFTDI245R, owner
+A. Crone, unchanged host-application scope, and Embedded Systems applicability.
+Sources: template version 2.33, its bootstrap, AI guide, execution workflow,
+document guide, embedded profile, introduction, and course Section 1.6.
+One agent performed initialization using
+\hyperref[Skill:AIS-01]{AIS-01}, \hyperref[Skill:AIS-02]{AIS-02},
+\hyperref[Skill:AIS-13]{AIS-13}, and \hyperref[Skill:AIS-14]{AIS-14}.
+The namespace and scope were user decisions; hardware details and numerical
+limits were not invented. Template examples remain explicitly illustrative.
+The owner approved preparation of this draft; review of the resulting
+architecture, baseline acceptance, publication, and release remain pending.
+Build evidence is recorded in the project build report; successful compilation
+does not establish product verification or validation.
+
+\section{Layout and Navigation Correction}
+November 15, 2026. A. Crone authorized correction and rebuild after the first
+local review. Codex corrected the context diagram, attribution and profile
+links, prompt wrapping, contents-number spacing, and workflow figure size.
+The F: project was read-only to this automation session; the corrections and
+build were prepared in a separate review copy. The original F: copy remains
+unchanged. Owner review and replacement of the working copy remain pending.
+
+\section{Project Metadata Update}
+November 15, 2026. A. Crone requested the current project name SP800Project
+and organization Stephens University, 2026F SPE 800-ONLB-NGC. The spelling
+is retained exactly as supplied. Earlier records retain the previous project
+name SP800 as historical provenance. Filename prefix and scope are unchanged.
+
+\section{Example Record}
+Date: \textit{[timestamp]}; Tool and model: \textit{[name]}; Input: \textit{[requirements and constraints supplied]}; Task: \textit{[requested output]}; Human review and corrections: \textit{[summary]}; Unresolved assumptions: \textit{[list or none]}.
+
+\section{Requirement Scope or Family Extension Record}
+When an AI-assisted change proposes a requirement scope or family that is not
+already defined, record the proposed uppercase code, full name, decision
+boundary, rationale, representative examples, semantic-overlap review,
+identifier-collision check, affected register and category-catalog changes, and
+the authorized human's approval or rejection. Do not assign an identifier from
+the proposed scope or family before approval.

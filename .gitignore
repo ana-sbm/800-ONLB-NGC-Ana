@@ -1,0 +1,71 @@
+## Core LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+# Uncomment the line below if you do not want to track compiled PDFs
+# *.pdf
+
+## Bibliography auxiliary files (bibtex / biblatex / biber)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool & SyncTeX auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+latex.out/
+build/
+
+## Common package files (Beamer, Glossaries, MakeIndex, Minted, TikZ)
+*.nav
+*.pre
+*.snm
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.xdy
+*.idx
+*.ilg
+*.ind
+*.lol
+*.thm
+_minted*
+*.pyg
+*.dpth
+*.md5
+*.auxlock
+
+## Editor & OS temporary files
+*.bak
+*.sav
+*.tex~
+*.tex.backup
+.DS_Store
+Thumbs.db

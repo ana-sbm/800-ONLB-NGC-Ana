@@ -1,0 +1,21 @@
+\chapter{Development View}
+\ChapterLabel{DevelopmentView}
+\section{Chapter Responsibility}
+\label{Section:DevelopmentViewResponsibility}
+Map the design to source organization and build artifacts.
+
+\noindent\textbf{Expected result:} A code organization that developers can implement consistently.
+
+\section{SP800Project Status}
+\label{Section:SP800StatusDevelopmentView}
+Project-specific work in this chapter is planned. The inherited examples,
+identifiers, values, mappings, and statuses below are template reference
+material only. They are not approved SP800Project obligations, implemented features,
+executed tests, verification evidence, validation, or release authorization.
+Dependencies and missing facts are owned in
+\hyperref[Section:SP800OpenQuestions]{the project open-question list}.
+
+\section{How to Use This Chapter}
+Show how source code, modules, services, libraries, and build artifacts are organized. State dependency rules so that implementers do not create forbidden coupling.
+\section{Example}
+Organize a service into presentation/API, application workflow, domain model, and infrastructure adapters. The API calls application services; application services depend on domain abstractions; infrastructure implements those abstractions. Domain logic must not depend on the web framework or database driver.

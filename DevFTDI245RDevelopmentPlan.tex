@@ -1,0 +1,72 @@
+\chapter{Development Plan}
+\ChapterLabel{DevelopmentPlan}
+\section{Chapter Responsibility}
+\label{Section:DevelopmentPlanResponsibility}
+Define ownership, development increments, reviews, and unresolved decisions.
+\noindent\textbf{Expected result:} A bounded plan with explicit decision gates.
+
+\section{How to Use This Chapter}
+A. Crone is the project owner and decision authority. Codex acts as
+\texttt{aiaCoordinator} and \texttt{aiaDeveloper} in one agent. Self-review
+does not replace owner review. No delegation was used for initialization.
+
+\section{Domain Profile Selection}
+\label{Section:DevelopmentPlanProfiles}
+\begin{tabularx}{\linewidth}{L{3cm}L{2cm}Y}
+\caption{Project Domain Profile Decisions\label{Table:ProjectDomainProfiles}}\\
+\toprule Profile & Status & Rationale, Owner, and Date\\\midrule
+\hyperref[Chapter:EmbeddedSystemsProfile]{Embedded Systems} & Applicable &
+A. Crone confirmed applicability on November 14, 2026. Host behavior depends
+on physical sensor data, device interfaces, timing, and fault behavior.
+Platform class is a host application with external embedded hardware;
+specific hardware revisions and driver configuration remain open.\\
+\bottomrule
+\end{tabularx}
+No additional domain profile is supplied by this template. Future profile
+selection requires a recorded owner decision.
+
+\section{Lifecycle and Review Gates}
+Use bounded iterations within the V-model described in
+\hyperref[Figure:VModel]{the lifecycle figure}. First review the mission,
+boundary, stakeholders, and open questions; next develop linked candidate
+requirements and planned tests; then review architecture and implementation
+increments. Verification needs observed compliance evidence, validation
+needs stakeholder observations, and release needs a human decision.
+Later architecture views and hardware-specific budgets are planned until
+their inputs and risks justify specific designs and allocations.
+
+\section{Initialization Decisions and Open Questions}
+\label{Section:SP800OpenQuestions}
+The project name, owner, filename prefix, scope, and profile decision are
+confirmed. The organization is \Organization. Course review authority beyond the project
+owner remains to be confirmed. Every question below is owned by A. Crone; resolve it
+before its dependent requirements or implementation are approved.
+\begin{enumerate}
+\item Confirm stakeholder needs and downstream publication semantics,
+including validity and freshness interpretation.
+\item Identify hardware and board revisions, ADC and counter capture rules,
+counter width and rollover, byte pairing, and data representation. A counter
+input is not evidence of an acquisition timestamp.
+\item Identify the target host operating system, FT245R driver and SDK,
+supported device mode, programming language, compiler, and runtime.
+The document-build host is Windows; this does not select the product platform.
+\item Supply controlled datasheets, schematics, interface definitions, and
+hardware access. No hardware performance or compatibility is established.
+\item Define timing events, workload, deadlines, resource bounds, timeouts,
+disconnection behavior, and recovery. No numerical limit is approved.
+\item Assess power, physical environment, safety, security, regulatory,
+manufacturing, update, and service concerns. External hardware remains outside
+the scope; its assumptions and effects on host behavior still need review.
+\item Set milestone dates, course access policy, required reviewers, PDF
+delivery policy, and the evidence needed for acceptance. Detailed views,
+resource budgets, and tests remain planned pending these inputs.
+\end{enumerate}
+
+\section{Configuration and Publication}
+Editable LaTeX, TikZ, bibliography, build configuration, and AI instructions
+are maintained sources. Build results are document evidence only.
+This task prepares a local review draft; Git publication and baseline acceptance
+remain pending owner review. After initial acceptance, subsequent changes use
+branches and reviewed pull requests under course policy.
+See \ChapterRef{AIPromptLog} for material AI assistance and
+\ChapterRef{DocumentHistory} for project initialization history.

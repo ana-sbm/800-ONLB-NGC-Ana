@@ -1,0 +1,21 @@
+\chapter{Architecture Overview}
+\ChapterLabel{ArchitectureOverview}
+\section{Chapter Responsibility}
+\label{Section:ArchitectureOverviewResponsibility}
+Explain the major design choices and why they address the design drivers.
+
+\noindent\textbf{Expected result:} A defensible design direction with explicit trade-offs.
+
+\section{SP800Project Status}
+\label{Section:SP800StatusArchitectureOverview}
+Project-specific work in this chapter is planned. The inherited examples,
+identifiers, values, mappings, and statuses below are template reference
+material only. They are not approved SP800Project obligations, implemented features,
+executed tests, verification evidence, validation, or release authorization.
+Dependencies and missing facts are owned in
+\hyperref[Section:SP800OpenQuestions]{the project open-question list}.
+
+\section{How to Use This Chapter}
+Explain the forces that shape the design, the major decisions, alternatives considered, and consequences. Use the 4+1 views only when they help readers answer different architectural questions.
+\section{Decision Template and Example}
+\textbf{ARC-001:} \textit{[Decision]}; \textbf{Drivers:} \textit{[quality attributes and constraints]}; \textbf{Rationale:} \textit{[why selected]}; \textbf{Consequences:} \textit{[benefits, trade-offs, and risks]}. Example: use an asynchronous message queue to protect request processing from transient downstream outages; this improves resilience but introduces eventual consistency.
