@@ -10,7 +10,7 @@ Show that the completed system meets stakeholder needs in its intended context.
 
 \section{SP800Project Status}
 \label{Section:SP800StatusValidation}
-Project-specific work in this chapter is planned. The inherited examples,
+Project-specific validation plans are in \hyperref[Table:ProjectValidationRegister]{the project register}; no project validation has been executed. The inherited examples,
 identifiers, values, mappings, and statuses below are template reference
 material only. They are not approved SP800Project obligations, implemented features,
 executed tests, verification evidence, validation, or release authorization.
@@ -44,3 +44,25 @@ Validation answers ``Did we build the right system?''
 \ValidationID{VAL-003} & \UserStoryRef{US-003} & An authorized analyst exports a representative request history. & Within five minutes, the analyst opens the approved format, finds the expected records, and confirms source records were unchanged. & \StatusPending\\
 \end{tabularx}
 \normalsize
+\section{Project Validation Plan}\label{Section:ProjectValidationPlan}
+All new entries are plans, not results. Owner: A. Crone. Execution participants
+and independent reviewers: TBD. Every unresolved bound and decision date is
+TBD, owned by A. Crone. Status: \StatusPending; not executed. Referenced
+approved rules, configurations and workloads require decisions before execution.
+Document-build success is not product verification or stakeholder validation.
+A. Crone owns each plan; the named stakeholder role supplies intended-use
+observations. Actual participants are TBD. Product-owner readiness disposition
+does not replace \VerificationRef{VER-027} conformance evidence.
+\begin{landscape}\small
+
+\begin{tabularx}{\linewidth}{L{1.5cm}L{1.7cm}YYL{2.7cm}YL{2.2cm}}
+\caption{Project Validation Register\label{Table:ProjectValidationRegister}}\\
+\toprule\textbf{ID} & \textbf{Story} & \textbf{Scenario} & \textbf{Success Criterion} & \textbf{Stakeholder} & \textbf{Planned Evidence} & \textbf{Status}\\\midrule\endfirsthead
+\toprule\textbf{ID} & \textbf{Story} & \textbf{Scenario} & \textbf{Success Criterion} & \textbf{Stakeholder} & \textbf{Planned Evidence} & \textbf{Status}\\\midrule\endhead\bottomrule\endlastfoot
+\ValidationID{VAL-004} & \UserStoryRef{US-004} & Review current, unavailable, invalid, aging, stale and absent readings during acquisition. & Correctly interpret value/\allowbreak status and make appropriate use decisions against agreed expectations. Case set/\allowbreak required success rate: TBD. & operator; participant TBD. & Scenario script, expected decisions, observed interpretations/\allowbreak actions and stakeholder feedback/\allowbreak disposition. \hyperref[PlannedEvidence:VAL-004]{Planned evidence slot}. & \StatusPending\\
+\ValidationID{VAL-005} & \UserStoryRef{US-005} & Operate while earlier samples remain in processing/\allowbreak delivery, including agreed overload. & Confirm continued acquisition within the envelope and explain ordering, loss and interruptions using available information. Workload/\allowbreak criteria: TBD. & acquisition-developer; participant TBD. & Workload demonstration, correlated traces, developer walkthrough and feedback/\allowbreak disposition. \hyperref[PlannedEvidence:VAL-005]{Planned evidence slot}. & \StatusPending\\
+\ValidationID{VAL-006} & \UserStoryRef{US-006} & Follow documented setup on each agreed macOS, Windows and Linux configuration. & Install, configure and demonstrate the same agreed acquisition/\allowbreak publication/\allowbreak status behavior on all three platforms. Assistance/\allowbreak time/\allowbreak configurations: TBD. & field-engineer; participant TBD. & Setup observations, configuration records, behavior demonstrations and field-engineer feedback. \hyperref[PlannedEvidence:VAL-006]{Planned evidence slot}. & \StatusPending\\
+\ValidationID{VAL-007} & \UserStoryRef{US-007} & Use the contract to substitute conforming sensor-side/\allowbreak consumer implementations and assess an incompatible replacement. & Conforming replacements integrate without connection redesign; incompatible replacement detected before operational use. Replacement set/\allowbreak evaluation criteria: TBD. & mission-integrator; participant TBD. & Contract-based walkthrough, substitution records, compatibility findings and stakeholder disposition. \hyperref[PlannedEvidence:VAL-007]{Planned evidence slot}. & \StatusPending\\
+\ValidationID{VAL-008} & \UserStoryRef{US-008} & Review readiness for future OMS integration using \UseCaseRef{UC-006}. & Determine readiness from applicable OMS Version 2.5 provision mappings, evidence and explicit gaps; record reasoned acceptance/\allowbreak change disposition. Criteria: TBD. & product owner; participant TBD. & Applicability assessment, compliance matrix, review minutes, gap dispositions and product-owner decision. \hyperref[PlannedEvidence:VAL-008]{Planned evidence slot}. & \StatusPending\\
+\end{tabularx}
+\normalsize\end{landscape}

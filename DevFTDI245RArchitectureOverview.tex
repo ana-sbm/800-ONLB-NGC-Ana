@@ -8,7 +8,8 @@ Explain the major design choices and why they address the design drivers.
 
 \section{SP800Project Status}
 \label{Section:SP800StatusArchitectureOverview}
-Project-specific work in this chapter is planned. The inherited examples,
+The OMS direction in \ArchitectureRef{ARC-002} is Proposed. No OMS applicability,
+interface implementation, compliance or release approval is claimed. The inherited examples,
 identifiers, values, mappings, and statuses below are template reference
 material only. They are not approved SP800Project obligations, implemented features,
 executed tests, verification evidence, validation, or release authorization.
@@ -19,3 +20,82 @@ Dependencies and missing facts are owned in
 Explain the forces that shape the design, the major decisions, alternatives considered, and consequences. Use the 4+1 views only when they help readers answer different architectural questions.
 \section{Decision Template and Example}
 \textbf{ARC-001:} \textit{[Decision]}; \textbf{Drivers:} \textit{[quality attributes and constraints]}; \textbf{Rationale:} \textit{[why selected]}; \textbf{Consequences:} \textit{[benefits, trade-offs, and risks]}. Example: use an asynchronous message queue to protect request processing from transient downstream outages; this improves resilience but introduces eventual consistency.
+
+\section{OMS Applicability and Architecture Compatibility}
+\label{Section:OMSArchitectureDecision}
+
+\begin{tabularx}{\linewidth}{L{3.1cm}Y}
+\caption{Proposed OMS Architecture Decision\label{Table:OMSArchitectureDecision}}\\
+\toprule\textbf{Field} & \textbf{Proposed Record}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Proposed Record}\\\midrule\endhead\bottomrule\endlastfoot
+Identifier & \ArchitectureID{ARC-002}\\
+Status & Proposed -- pending applicability, interface and evidence decisions.\\
+Owner and date & A. Crone, acting as product owner. Decision date: TBD.\\
+Context & SP800Project publishes local sensor samples and status. The product owner needs architecture support for future mission-system integration. Whether a derived sensor-status product crosses an OMS mission boundary remains TBD.\\
+Proposed direction & Use OMS Version 2.5 as the proposed architecture-compatibility target. Assess applicable provisions through \UseCaseRef{UC-006} and maintain a provision-to-architecture evidence matrix. Keep operational OMS publication conditional until applicability and interface responsibilities are approved.\\
+Boundary & Preserve the current host-application scope. CAL implementation and mission-gateway responsibility remain TBD; no component is assigned those responsibilities by this proposal.\\
+Drivers & \UserStoryRef{US-008}, \UserStoryRef{US-007}, \UserStoryRef{US-004}; \RequirementRef{REQ-C-002} and \RequirementRef{REQ-I-004}.\\
+Consequences & Architecture review has an explicit proposed target; operational integration details remain open. Dependent implementation and compliance acceptance remain pending.\\
+Risks & Selecting a baseline or mapping without authoritative inputs could create incompatible interfaces or unsupported compliance claims. Gateway placement could change scope and needs an owner decision.\\
+Approval evidence & Authoritative baseline, applicability assessment, approved interface decisions, compliance matrix and recorded owner/reviewer dispositions. Evidence is planned, not collected: \VerificationRef{VER-019}, \VerificationRef{VER-027} and \ValidationRef{VAL-008}.\\
+Deferred scope & The FTDI/CAL Tier 1 proposal and its budget/schedule rationale remain low-priority research, not adopted architecture. All other low-priority tasks remain deferred.\\
+\end{tabularx}
+\subsection{Alternatives and Trade-offs}
+
+\begin{tabularx}{\linewidth}{L{4.3cm}Y}
+\caption{OMS Direction Alternatives\label{Table:OMSDirectionAlternatives}}\\
+\toprule\textbf{Alternative} & \textbf{Proposed Disposition}\\\midrule\endfirsthead
+\toprule\textbf{Alternative} & \textbf{Proposed Disposition}\\\midrule\endhead\bottomrule\endlastfoot
+Local interface only; omit OMS assessment & Does not address \UserStoryRef{US-008} architecture-compatibility goal.\\
+Select a complete operational OMS implementation now & Defer until applicability, profile, message mapping and responsibility are supported by evidence.\\
+Assess architecture compatibility now; retain conditional operational publication & Recommended proposed direction. Supports the product-owner goal while exposing unresolved operational decisions. No implementation selection is approved.\\
+\end{tabularx}
+\subsection{OMS Unresolved Decisions}
+\label{Section:OMSUnresolvedDecisions}
+Every row is Open, owned by A. Crone, with decision date TBD. Supporting
+technical reviewers are TBD. OMS Version 2.5 is a proposed target; it is not
+a selected authoritative baseline or a compliance claim.
+
+\begin{tabularx}{\linewidth}{L{3cm}YYL{1.7cm}L{1.8cm}}
+\caption{OMS Unresolved Decision Register\label{Table:OMSUnresolvedDecisions}}\\
+\toprule\textbf{Decision Item} & \textbf{Recorded Value} & \textbf{Resolution Needed} & \textbf{Owner} & \textbf{Decision Date}\\\midrule\endfirsthead
+\toprule\textbf{Decision Item} & \textbf{Recorded Value} & \textbf{Resolution Needed} & \textbf{Owner} & \textbf{Decision Date}\\\midrule\endhead\bottomrule\endlastfoot
+Architecture assessment applicability & Proposed for \UserStoryRef{US-008}; applicable provisions TBD. & Determine provisions governing the documentation and intended integration context. & A. Crone & TBD\\
+Operational OMS applicability & TBD. & Decide whether the derived status product crosses an OMS mission boundary in this project. & A. Crone & TBD\\
+Standard baseline & OMS Version 2.5 proposed; authoritative document identifier, revision and amendments TBD. & Identify controlled source and approve exact baseline. & A. Crone & TBD\\
+CAL profile & TBD. & Select applicable profile and identify its obligations. & A. Crone & TBD\\
+UCI message and version & TBD. & Select message definition and required fields. & A. Crone & TBD\\
+Derived data product & TBD. & Define contents, source, meaning and relation to local samples/status. & A. Crone & TBD\\
+Status mapping & TBD; see \hyperref[Table:OMSStatusMapping]{mapping questions}. & Define local availability, validity, age/staleness and fault mappings. & A. Crone & TBD\\
+Responsible gateway & TBD. & Identify responsible component and accountable implementation owner. & A. Crone & TBD\\
+Gateway placement & TBD. & Decide inside/outside host boundary; review any scope change. & A. Crone & TBD\\
+Service contract & TBD. & Define triggers, transport, delivery, failure handling, compatibility and applicable timing obligations. & A. Crone & TBD\\
+Compliance assessment criteria & TBD. & Define evidence and acceptable dispositions for each applicable provision. & A. Crone & TBD\\
+Acceptance authority & A. Crone is project decision owner; additional technical/course reviewers TBD. & Identify required reviewers and acceptance authority. & A. Crone & TBD\\
+\end{tabularx}
+\subsection{Status-Mapping Questions}
+All mappings are TBD; owner A. Crone; decision date TBD. Local concepts remain distinct.
+
+\begin{tabularx}{\linewidth}{L{5.3cm}Y}
+\caption{Pending OMS Status Mapping\label{Table:OMSStatusMapping}}\\
+\toprule\textbf{Local Information} & \textbf{Unresolved Target Mapping}\\\midrule\endfirsthead
+\toprule\textbf{Local Information} & \textbf{Unresolved Target Mapping}\\\midrule\endhead\bottomrule\endlastfoot
+Available, valid, current reading & TBD: target message fields and values.\\
+Retained reading that has become stale & TBD: target fields, stale threshold and publication rule.\\
+Invalid observation & TBD: validity/fault representation.\\
+Disconnected or unavailable source & TBD: availability/fault representation.\\
+No sample received yet & TBD: target representation.\\
+Recovery in progress or completed & TBD: transition rules and target representation.\\
+\end{tabularx}
+\subsection{Requirement and Evidence Disposition}
+\RequirementRef{REQ-I-004} (lecture alias REQ-OMS-01) remains Proposed;
+its publication condition is unresolved. The linked plan is
+\VerificationRef{VER-019}, with \hyperref[PlannedEvidence:VER-019]{planned evidence}.
+\RequirementRef{REQ-C-002} remains Proposed, evaluated through
+\UseCaseRef{UC-006}, \VerificationRef{VER-027} and \ValidationRef{VAL-008},
+with \hyperref[PlannedEvidence:VER-027]{verification evidence} and
+\hyperref[PlannedEvidence:VAL-008]{stakeholder evidence} not collected.
+All new product verification and validation plans remain Pending.
+Lecture numerical allocations are teaching values pending project approval,
+not product commitments. Other unresolved values are owned in
+\hyperref[Table:ProjectUnresolvedValues]{the project unresolved-value register}.
