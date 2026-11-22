@@ -12,7 +12,9 @@ Specify the obligations the system must satisfy in a verifiable form.
 
 \section{SP800Project Status}
 \label{Section:SP800StatusRequirements}
-Project-specific work in this chapter is planned. The inherited examples,
+The pending story-linked definitions at the end of this chapter are project
+draft placeholders. The other registers remain inherited template examples.
+Completion of project requirements is planned. The inherited examples,
 identifiers, values, mappings, and statuses below are template reference
 material only. They are not approved SP800Project obligations, implemented features,
 executed tests, verification evidence, validation, or release authorization.
@@ -435,3 +437,33 @@ use the same traceability columns.
 \RequirementID{REQ-C-001} & The system shall support the deployment platform and browser versions identified in the approved deployment baseline. & \gls{must} & \ReqStatusDone & 1.0 & \UseCaseRef{UC-001}, \UseCaseRef{UC-002}, \UseCaseRef{UC-003} & \TestCaseRef{TC-008}\\
 \end{tabularx}
 \end{landscape}
+
+\section{Pending Story Requirement Definitions}
+\label{Section:PendingStoryRequirements}
+These are reserved functional-requirement placeholders for the user-supplied
+stories, not approved or implemented obligations. The requirement statements,
+priorities, tests, verification, and validation remain TBD. Draft use-case
+mappings are recorded below and in \hyperref[Table:TraceabilityMatrix]{the traceability register}.
+Status: draft placeholder awaiting definition. In Version: \NoVersion.
+Owner: A. Crone. Decision date: TBD. No implementation or passing evidence
+is claimed. The reminder is in
+\hyperref[Section:StoryRequirementsReminder]{the User Stories chapter}.
+
+\begin{tabularx}{\linewidth}{L{2.7cm}L{1.9cm}YL{1.8cm}}
+\caption{Pending Story Requirement Definitions\label{Table:PendingStoryRequirements}}\\
+\toprule
+\textbf{Reserved ID} & \textbf{Story} & \textbf{Required Completion} & \textbf{Owner}\\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\small\itshape Pending Story Requirement Definitions (continued)}\\
+\toprule
+\textbf{Reserved ID} & \textbf{Story} & \textbf{Required Completion} & \textbf{Owner}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\RequirementID{REQ-F-004} & \UserStoryRef{US-004} & TBD: define the \hyperref[Stakeholder:Operator]{operator} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
+\RequirementID{REQ-F-005} & \UserStoryRef{US-005} & TBD: define the \hyperref[Stakeholder:AcquisitionDeveloper]{acquisition-developer} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}. & A. Crone\\
+\RequirementID{REQ-F-006} & \UserStoryRef{US-006} & TBD: define the \hyperref[Stakeholder:FieldEngineer]{field-engineer} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
+\RequirementID{REQ-F-007} & \UserStoryRef{US-007} & TBD: define the \hyperref[Stakeholder:MissionIntegrator]{mission-integrator} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
+\end{tabularx}

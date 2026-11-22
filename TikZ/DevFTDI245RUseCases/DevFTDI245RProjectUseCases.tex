@@ -1,0 +1,9 @@
+\begin{tikzpicture}[every node/.style={align=center,font=\small}, goal/.style={draw,ellipse,text width=4cm,minimum height=1.5cm}, actor/.style={draw,rounded corners,text width=3.5cm,minimum height=1cm}]
+\node[goal] (receive) at (0,0) {\UseCaseRef{UC-004}\\Receive qualified\\sensor samples};
+\node[goal] (monitor) at (7,0) {\UseCaseRef{UC-005}\\Monitor sensor status};
+\node[draw,fit=(receive)(monitor),inner sep=8mm,label=below:{\ProjectName\ host application}] {};
+\node[actor] (consumer) at (0,3) {Downstream consumer\\represented by \hyperref[Stakeholder:MissionIntegrator]{mission-integrator}};
+\node[actor] (operator) at (7,3) {\hyperref[Stakeholder:Operator]{operator}};
+\draw (consumer.south) -- (receive.north);
+\draw (operator.south) -- (monitor.north);
+\end{tikzpicture}

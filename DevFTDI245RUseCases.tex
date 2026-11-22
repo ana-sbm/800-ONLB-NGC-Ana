@@ -8,7 +8,9 @@ Describe how actors interact with the system to achieve their goals.
 
 \section{SP800Project Status}
 \label{Section:SP800StatusUseCases}
-Project-specific work in this chapter is planned. The inherited examples,
+Project-specific draft interactions are recorded in \UseCaseRef{UC-004} and
+\UseCaseRef{UC-005}. Requirements, tests, and acceptance remain pending.
+The inherited examples in \UseCaseRef{UC-001} through \UseCaseRef{UC-003},
 identifiers, values, mappings, and statuses below are template reference
 material only. They are not approved SP800Project obligations, implemented features,
 executed tests, verification evidence, validation, or release authorization.
@@ -80,3 +82,163 @@ Figure~\ref{Figure:UseCaseDiagram} provides the template example.
 \textbf{Postconditions} & An export artifact exists; source request records are unchanged.\\
 \bottomrule
 \end{tabularx}
+
+\section{Project Use Cases and Decision Status}
+\label{Section:SP800ProjectUseCases}
+The course's UC-01 and UC-02 are recorded as \UseCaseRef{UC-004} and
+\UseCaseRef{UC-005}, respectively, following the existing three-digit
+identifier convention and preserving inherited IDs. These drafts express
+stakeholder intent, not approved requirements or demonstrated behavior.
+All unresolved values below are TBD, owned by A. Crone, with decision dates
+TBD. Detailed requirements will be developed from the linked
+\hyperref[Table:PendingStoryRequirements]{requirement placeholders} in Step 4.
+Mapped tests: TBD; no project test IDs or passing results are claimed.
+The canonical mappings are in \hyperref[Table:TraceabilityMatrix]{the traceability register}.
+
+\begin{figure}[htbp]
+\centering
+\input{TikZ/DevFTDI245RUseCases/DevFTDI245RProjectUseCases.tex}
+\caption{Project actor goals within the host-application boundary.}
+\label{Figure:SP800ProjectUseCases}
+\end{figure}
+
+\section{Receive Qualified Sensor Samples}
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Receive Qualified Sensor Samples\label{Table:UC004}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Identifier} & \UseCaseID{UC-004}\\
+\textbf{Goal} & Deliver qualified sensor sample records to a downstream consumer while acquisition continues as earlier samples are processed and delivered.\\
+\textbf{Primary actor} & Downstream consumer, represented by the \hyperref[Stakeholder:MissionIntegrator]{mission-integrator}.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}, \UserStoryRef{US-007}; supports \UserStoryRef{US-004}. \UserStoryRef{US-006} applies across supported platforms.\\
+\textbf{Mapped requirements} & \RequirementRef{REQ-F-005}, \RequirementRef{REQ-F-007}; \RequirementRef{REQ-F-004} for published qualification information. Portability: \RequirementRef{REQ-F-006}. All remain placeholders.\\
+\textbf{Mapped tests} & TBD; owner: A. Crone; decision date: TBD.\\
+\textbf{Precondition} & The host subsystem is running, the acquisition interface is configured, and the consumer connection is established according to the agreed interface contract.\\
+\textbf{Trigger} & The acquisition interface makes a new sensor observation available to the host subsystem.\\
+\textbf{Main flow 1} & Receive the observation through the acquisition interface.\\
+\textbf{Main flow 2} & Interpret the observation and evaluate validity using the agreed qualification rules.\\
+\textbf{Main flow 3} & Construct a local sample record containing code, validity state, timestamp, and monotonic sequence number.\\
+\textbf{Main flow 4} & Make the record available to the downstream consumer through the documented interface.\\
+\textbf{Main flow 5} & Continue acquisition while prior samples are processed and delivered.\\
+\textbf{Alternate: invalid} & Represent the invalid condition according to the agreed contract without presenting the observation as valid.\\
+\textbf{Alternate: overload} & Apply the agreed buffering and overload policy and account for any loss or interruption.\\
+\textbf{Alternate: disconnect} & Report source unavailability through \UseCaseRef{UC-005}.\\
+\textbf{Alternate: delivery failure} & Apply the agreed delivery-failure and recovery policy.\\
+\textbf{Postcondition} & The consumer receives a qualified sample record, or the subsystem exposes the applicable invalid, unavailable, or delivery-failure condition. Any loss or interruption is accounted for under the agreed policy.\\
+\textbf{Open decisions} & TBD: timestamp reference event and clock, qualification rules, sequence-number lifecycle, buffering capacity, overload policy, and delivery/recovery behavior. Owner: A. Crone; decision date: TBD.\\
+\end{tabularx}
+\section{Monitor Sensor Status}
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Monitor Sensor Status\label{Table:UC005}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Identifier} & \UseCaseID{UC-005}\\
+\textbf{Goal} & Enable the operator to interpret current sensor values and their availability, validity, and age when deciding whether to use a reading.\\
+\textbf{Primary actor} & \hyperref[Stakeholder:Operator]{operator}.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-007}. \UserStoryRef{US-006} applies across supported platforms.\\
+\textbf{Mapped requirements} & \RequirementRef{REQ-F-004}, \RequirementRef{REQ-F-007}; portability: \RequirementRef{REQ-F-006}. All remain placeholders.\\
+\textbf{Mapped tests} & TBD; owner: A. Crone; decision date: TBD.\\
+\textbf{Precondition} & The host subsystem is running and the operator can access its published sensor information. A current sample need not exist.\\
+\textbf{Trigger} & The operator requests sensor information, or the subsystem detects a change in sample or sensor status.\\
+\textbf{Main flow 1} & Determine sensor availability using the agreed detection rules.\\
+\textbf{Main flow 2} & Obtain the latest published sample and its validity information, when present.\\
+\textbf{Main flow 3} & Determine sample age using the agreed timestamp semantics.\\
+\textbf{Main flow 4} & Expose the current value, availability, validity, and age through the agreed operator interaction mechanism.\\
+\textbf{Main flow 5} & The operator reviews that information and decides whether to use the reading.\\
+\textbf{Alternate: no sample} & Indicate that no reading is available.\\
+\textbf{Alternate: invalid} & Identify the invalid condition.\\
+\textbf{Alternate: aging} & Expose age and identify staleness according to the agreed rule.\\
+\textbf{Alternate: disconnect} & Indicate unavailability and distinguish any retained reading from newly acquired data.\\
+\textbf{Alternate: recovery} & Update availability and sample information after the agreed recovery conditions are met.\\
+\textbf{Postcondition} & The operator can distinguish an available, valid, current reading from an invalid, aging, stale, unavailable, or absent reading. The operator retains responsibility for the use decision.\\
+\textbf{Open decisions} & TBD: operator interaction mechanism, availability detection rules, stale-data threshold, age calculation, and recovery criteria. Owner: A. Crone; decision date: TBD.\\
+\end{tabularx}
+\section{Project Quality Scenarios}\label{Section:SP800QualityScenarios}
+\subsection{Continued Acquisition During Processing}
+Applies to \UseCaseRef{UC-004}. Owner: A. Crone; decision date: TBD.
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Continued Acquisition During Processing\label{Table:SP800Quality1}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Stimulus source} & Acquisition interface and downstream consumer.\\
+\textbf{Stimulus} & New observations arrive while earlier samples remain in processing or delivery.\\
+\textbf{Environment} & Normal operation under an agreed sustained and burst workload.\\
+\textbf{Artifact} & Host acquisition, processing, buffering, and publication path.\\
+\textbf{Response} & Continue acquisition, preserve the agreed ordering, and account for loss or interruption according to the overload policy.\\
+\textbf{Response measure} & Acquisition continuity, publication latency, buffer occupancy, ordering, and loss accounting satisfy agreed bounds. Workload and bounds: TBD.\\
+\end{tabularx}
+\subsection{Consumer Replacement}
+Applies to \UseCaseRef{UC-004}. Owner: A. Crone; decision date: TBD.
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Consumer Replacement\label{Table:SP800Quality2}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Stimulus source} & Mission-integrator.\\
+\textbf{Stimulus} & A downstream consumer is replaced with another implementation conforming to the documented interface.\\
+\textbf{Environment} & Controlled integration exercise using representative sample records and status conditions.\\
+\textbf{Artifact} & Published sensor data and status interface.\\
+\textbf{Response} & The replacement interprets records and status correctly without redesigning the connection; an incompatible implementation is identified before operational use.\\
+\textbf{Response measure} & All agreed interface examples and compatibility checks pass. Examples and checks: TBD.\\
+\end{tabularx}
+\subsection{Sensor Stops Supplying Observations}
+Applies to \UseCaseRef{UC-005}. Owner: A. Crone; decision date: TBD.
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Sensor Stops Supplying Observations\label{Table:SP800Quality3}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Stimulus source} & Sensor or acquisition connection.\\
+\textbf{Stimulus} & Observations stop arriving, or the acquisition interface reports a disconnect.\\
+\textbf{Environment} & An active acquisition session with a previously published sample.\\
+\textbf{Artifact} & Availability detection, sample-age calculation, and operator-facing status information.\\
+\textbf{Response} & Update availability and age, identify staleness when applicable, and distinguish the retained reading from fresh data.\\
+\textbf{Response measure} & Status detection and publication occur within agreed bounds; age calculation meets the agreed accuracy bound; representative operators correctly interpret the condition. Bounds and acceptance criterion: TBD.\\
+\end{tabularx}
+\subsection{Sensor Resumes Supplying Observations}
+Applies to \UseCaseRef{UC-005}. Owner: A. Crone; decision date: TBD.
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Sensor Resumes Supplying Observations\label{Table:SP800Quality4}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Stimulus source} & Sensor or restored acquisition connection.\\
+\textbf{Stimulus} & Observations resume after an unavailable period.\\
+\textbf{Environment} & Recovery during an active acquisition session.\\
+\textbf{Artifact} & Acquisition recovery and published sensor status.\\
+\textbf{Response} & Evaluate resumed observations and update availability, validity, value, and age according to the agreed recovery rules.\\
+\textbf{Response measure} & Recovery completes within the agreed bound; status does not indicate a usable current reading before the agreed conditions are satisfied. Bound and conditions: TBD.\\
+\end{tabularx}
+\subsection{Supported Platform Operation}
+Applies to \UseCaseRef{UC-004} and \UseCaseRef{UC-005}. Owner: A. Crone; decision date: TBD.
+
+\begin{tabularx}{\linewidth}{L{3.5cm}Y}
+\caption{Supported Platform Operation\label{Table:SP800Quality5}}\\
+\toprule
+\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead
+\bottomrule\endlastfoot
+\textbf{Stimulus source} & Field-engineer.\\
+\textbf{Stimulus} & The host subsystem is installed and operated on an agreed macOS, Windows, or Linux configuration.\\
+\textbf{Environment} & Controlled setup and demonstration on each supported operating-system and driver configuration.\\
+\textbf{Artifact} & Host subsystem and documented setup procedure.\\
+\textbf{Response} & Demonstrate the agreed acquisition, publication, and status flows for both project use cases.\\
+\textbf{Response measure} & The same agreed behavior is demonstrated on all three platforms. Supported versions, driver configurations, and demonstration criteria: TBD.\\
+\end{tabularx}
+
+OMS applicability remains a separate pending decision; no OMS contract or numerical teaching allocation is adopted here.
