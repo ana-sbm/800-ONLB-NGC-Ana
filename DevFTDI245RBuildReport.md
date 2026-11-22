@@ -1,13 +1,9 @@
-# SP800Project Step 3 build review
+# SP800Project Step 4 review
 
-November 22, 2026. Version 0.7. Owner review pending.
+Version 0.8, November 22, 2026. Owner review pending.
 
-Added UC-004 Receive qualified sensor samples and UC-005 Monitor sensor status, following the existing three-digit convention. Preserved UC-001 through UC-003 and all existing IDs. Added five six-part quality scenarios (continued acquisition, consumer replacement, disconnect, recovery, platform operation), a TikZ actor-goal diagram, reciprocal requirement-placeholder and trace mappings, history and AI assistance records.
+Added US-008 product owner, the stakeholder definition and expected evidence, and UC-006 Assess architecture compatibility with OMS. Applied 18 proposed candidate requirements grouped by functional behavior, interface, timing, capacity, reliability, and OMS architecture/interface. Preserved existing IDs and retained six lecture IDs as source aliases. Updated story, use-case, and canonical trace links, history, and AI prompt log.
 
-All six build commands passed: pdflatex, bibtex, makeglossaries, makeindex, pdflatex, pdflatex, using the portable F: toolchain. Final PDF: 138 pages. No fatal errors, undefined references, multiply defined labels, overfull boxes, or warnings in the final log. Existing underfull-box notices in unchanged guide prose remain.
+The final settled PDF contains 151 pages. The final MiKTeX log reports successful output with no fatal errors, undefined references, overfull boxes, or build warnings. Earlier overlapping build output was unstable; verification was resumed only after output settled. The final PDF opens and all 1,530 internal GoTo targets resolve. Visually reviewed the new stakeholder/story/use-case content and candidate requirement pages. Requirements appear on printed pages 30-38; US-008 on page 16; UC-006 on page 47.
 
-Checked 1307 internal GoTo links: no missing targets. Confirmed reciprocal use-case/requirement-placeholder navigation. Rendered and inspected project use-case and quality-scenario pages (printed pages 32-37), including the diagram; corrected touching diagram shapes before final rebuild.
-
-Detailed requirements, tests, acceptance bounds, workloads, supported configurations, and OMS decisions remain TBD, owner A. Crone, decision dates TBD. The project skill's complete test-link criterion remains pending the later requirements/test work; no test results or stakeholder validation are claimed. Step 3 is ready for owner review, not baseline approval.
-
-Sources and build outputs were updated directly on F:. No version-control actions were performed. Deferred low-priority work was not executed.
+All requirements remain Proposed, priorities TBD, In Version empty set. Unresolved parameters and decision dates remain TBD, owned by A. Crone. OMS Version 2.5 is a proposed target, not a compliance claim. Verification and validation registers remain Step 5; OMS applicability and interface decisions remain Step 6. No version-control actions were performed.

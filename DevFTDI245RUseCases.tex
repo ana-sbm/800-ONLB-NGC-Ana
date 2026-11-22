@@ -90,8 +90,8 @@ The course's UC-01 and UC-02 are recorded as \UseCaseRef{UC-004} and
 identifier convention and preserving inherited IDs. These drafts express
 stakeholder intent, not approved requirements or demonstrated behavior.
 All unresolved values below are TBD, owned by A. Crone, with decision dates
-TBD. Detailed requirements will be developed from the linked
-\hyperref[Table:PendingStoryRequirements]{requirement placeholders} in Step 4.
+TBD. Detailed requirements are drafted in the linked
+\hyperref[Table:PendingStoryRequirements]{candidate requirements}; unresolved decisions remain pending.
 Mapped tests: TBD; no project test IDs or passing results are claimed.
 The canonical mappings are in \hyperref[Table:TraceabilityMatrix]{the traceability register}.
 
@@ -114,7 +114,7 @@ The canonical mappings are in \hyperref[Table:TraceabilityMatrix]{the traceabili
 \textbf{Goal} & Deliver qualified sensor sample records to a downstream consumer while acquisition continues as earlier samples are processed and delivered.\\
 \textbf{Primary actor} & Downstream consumer, represented by the \hyperref[Stakeholder:MissionIntegrator]{mission-integrator}.\\
 \textbf{Linked stories} & \UserStoryRef{US-005}, \UserStoryRef{US-007}; supports \UserStoryRef{US-004}. \UserStoryRef{US-006} applies across supported platforms.\\
-\textbf{Mapped requirements} & \RequirementRef{REQ-F-005}, \RequirementRef{REQ-F-007}; \RequirementRef{REQ-F-004} for published qualification information. Portability: \RequirementRef{REQ-F-006}. All remain placeholders.\\
+\textbf{Mapped requirements} & \RequirementRef{REQ-F-005}, \RequirementRef{REQ-F-006}, \RequirementRef{REQ-F-007}, \RequirementRef{REQ-F-008}, \RequirementRef{REQ-I-002}, \RequirementRef{REQ-I-003}, \RequirementRef{REQ-Q-002}, \RequirementRef{REQ-Q-003}, \RequirementRef{REQ-Q-004}, \RequirementRef{REQ-Q-005}, \RequirementRef{REQ-F-009}, \RequirementRef{REQ-Q-008}, \RequirementRef{REQ-F-010}, \RequirementRef{REQ-I-004}. All are proposed candidates.\\
 \textbf{Mapped tests} & TBD; owner: A. Crone; decision date: TBD.\\
 \textbf{Precondition} & The host subsystem is running, the acquisition interface is configured, and the consumer connection is established according to the agreed interface contract.\\
 \textbf{Trigger} & The acquisition interface makes a new sensor observation available to the host subsystem.\\
@@ -142,7 +142,7 @@ The canonical mappings are in \hyperref[Table:TraceabilityMatrix]{the traceabili
 \textbf{Goal} & Enable the operator to interpret current sensor values and their availability, validity, and age when deciding whether to use a reading.\\
 \textbf{Primary actor} & \hyperref[Stakeholder:Operator]{operator}.\\
 \textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-007}. \UserStoryRef{US-006} applies across supported platforms.\\
-\textbf{Mapped requirements} & \RequirementRef{REQ-F-004}, \RequirementRef{REQ-F-007}; portability: \RequirementRef{REQ-F-006}. All remain placeholders.\\
+\textbf{Mapped requirements} & \RequirementRef{REQ-F-004}, \RequirementRef{REQ-F-006}, \RequirementRef{REQ-F-007}, \RequirementRef{REQ-I-003}, \RequirementRef{REQ-Q-006}, \RequirementRef{REQ-Q-007}, \RequirementRef{REQ-Q-008}, \RequirementRef{REQ-F-010}, \RequirementRef{REQ-I-004}. All are proposed candidates.\\
 \textbf{Mapped tests} & TBD; owner: A. Crone; decision date: TBD.\\
 \textbf{Precondition} & The host subsystem is running and the operator can access its published sensor information. A current sample need not exist.\\
 \textbf{Trigger} & The operator requests sensor information, or the subsystem detects a change in sample or sensor status.\\
@@ -242,3 +242,24 @@ Applies to \UseCaseRef{UC-004} and \UseCaseRef{UC-005}. Owner: A. Crone; decisio
 \end{tabularx}
 
 OMS applicability remains a separate pending decision; no OMS contract or numerical teaching allocation is adopted here.
+\section{Assess Architecture Compatibility with OMS}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{Assess Architecture Compatibility with OMS\label{Table:UC006}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \UseCaseID{UC-006}\\
+\textbf{Goal} & Determine whether the documented architecture satisfies applicable OMS compatibility obligations.\\
+\textbf{Primary actor} & \hyperref[Stakeholder:ProductOwner]{product owner}.\\
+\textbf{Linked story} & \UserStoryRef{US-008}.\\
+\textbf{Mapped requirements} & \RequirementRef{REQ-C-002}; assess the conditional interface design in \RequirementRef{REQ-I-004}.\\
+\textbf{Precondition} & The architecture documentation and authoritative OMS baseline are available.\\
+\textbf{Trigger} & The product owner requests an OMS compatibility review.\\
+\textbf{Main flow 1} & Identify applicable provisions.\\
+\textbf{Main flow 2} & Map applicable provisions to architecture artifacts.\\
+\textbf{Main flow 3} & Inspect supporting evidence.\\
+\textbf{Main flow 4} & Record conformance findings and unresolved gaps.\\
+\textbf{Alternate flow} & If a provision, interface decision, or required evidence is unresolved, record the gap with an owner and decision date.\\
+\textbf{Postcondition} & A reviewable compatibility assessment exists, with a disposition for each applicable provision.\\
+\textbf{Pending decisions} & Authoritative OMS Version 2.5 revision, applicability, assessment criteria and evidence: TBD. Owner: A. Crone; decision date: TBD. Mapped tests: TBD. No compliance claim is made.\\
+\end{tabularx}

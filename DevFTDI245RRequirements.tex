@@ -438,32 +438,280 @@ use the same traceability columns.
 \end{tabularx}
 \end{landscape}
 
-\section{Pending Story Requirement Definitions}
-\label{Section:PendingStoryRequirements}
-These are reserved functional-requirement placeholders for the user-supplied
-stories, not approved or implemented obligations. The requirement statements,
-priorities, tests, verification, and validation remain TBD. Draft use-case
-mappings are recorded below and in \hyperref[Table:TraceabilityMatrix]{the traceability register}.
-Status: draft placeholder awaiting definition. In Version: \NoVersion.
-Owner: A. Crone. Decision date: TBD. No implementation or passing evidence
-is claimed. The reminder is in
-\hyperref[Section:StoryRequirementsReminder]{the User Stories chapter}.
+\section{Project Candidate Requirements}
+\label{Section:PendingStoryRequirements}\label{Section:SP800CandidateRequirements}
+These candidates elaborate the reserved IDs and approved drafting intent;
+they are not approved product commitments. All entries below have status
+\textbf{Proposed}, priority TBD, In Version \NoVersion, owner A. Crone,
+and decision date TBD. Mapped tests, verification, validation, and evidence
+are TBD pending the Week 2 registers. No passing result is claimed.
+Each TBD or reference to an agreed or approved parameter remains an unresolved
+decision owned by A. Crone, with decision date TBD.
+Lecture IDs are source aliases, not additional project requirement definitions.
+Numerical lecture allocations are teaching values pending project approval.
+Canonical mappings are in \hyperref[Table:TraceabilityMatrix]{the trace register}.
+\phantomsection\label{Table:PendingStoryRequirements}
 
-\begin{tabularx}{\linewidth}{L{2.7cm}L{1.9cm}YL{1.8cm}}
-\caption{Pending Story Requirement Definitions\label{Table:PendingStoryRequirements}}\\
-\toprule
-\textbf{Reserved ID} & \textbf{Story} & \textbf{Required Completion} & \textbf{Owner}\\
-\midrule
-\endfirsthead
-\multicolumn{4}{l}{\small\itshape Pending Story Requirement Definitions (continued)}\\
-\toprule
-\textbf{Reserved ID} & \textbf{Story} & \textbf{Required Completion} & \textbf{Owner}\\
-\midrule
-\endhead
-\bottomrule
-\endlastfoot
-\RequirementID{REQ-F-004} & \UserStoryRef{US-004} & TBD: define the \hyperref[Stakeholder:Operator]{operator} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
-\RequirementID{REQ-F-005} & \UserStoryRef{US-005} & TBD: define the \hyperref[Stakeholder:AcquisitionDeveloper]{acquisition-developer} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}. & A. Crone\\
-\RequirementID{REQ-F-006} & \UserStoryRef{US-006} & TBD: define the \hyperref[Stakeholder:FieldEngineer]{field-engineer} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
-\RequirementID{REQ-F-007} & \UserStoryRef{US-007} & TBD: define the \hyperref[Stakeholder:MissionIntegrator]{mission-integrator} capability, outcome, and verifiable acceptance bound. Draft use cases: \UseCaseRef{UC-004}, \UseCaseRef{UC-005}. & A. Crone\\
+\subsection{Unresolved Parameters and Approval Dependencies}
+TBD: qualification rules and input range; operator interaction mechanism;
+workload and supported OS/driver configurations; interface schema, encoding,
+status meanings, compatibility checks; timestamp event, clock, units,
+resolution, synchronization, error and latency bounds; sequence width,
+initialization, reset, and rollover; sustained and burst rates and durations,
+buffer size, supported delivery interruption, overload and loss reporting;
+stale/disconnect/recovery intervals and rules. Owner: A. Crone; decision date: TBD.
+Conversion-ready observability through the FT245R and host driver is an
+unresolved feasibility dependency, not an established capability. A host-receipt
+timestamp is not assumed to satisfy conversion-event timestamp accuracy.
+Session-scoped monotonicity remains a proposal pending the sequence lifecycle decision.
+Availability, validity, and staleness require distinct definitions.
+OMS Version 2.5 is the owner's proposed compatibility target. The authoritative
+revision and applicable provisions, CAL profile, UCI message, status mapping,
+responsible gateway and its placement relative to the host boundary remain TBD.
+No OMS compliance or operational gateway implementation is claimed.
+
+\subsection{Functional Behavior}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-004 Candidate\label{Table:REQ-F-004}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-004}\\
+\textbf{Candidate statement} & The host subsystem shall expose the latest sensor value, when present, together with its availability, validity, and age through the agreed operator interaction mechanism.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-005 Candidate\label{Table:REQ-F-005}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-005}\\
+\textbf{Candidate statement} & The host subsystem shall continue acquiring new observations while previously acquired samples are processed and delivered, within the approved operating workload.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-006 Candidate\label{Table:REQ-F-006}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-006}\\
+\textbf{Candidate statement} & The host subsystem shall provide the agreed acquisition, publication, and status behavior on each approved macOS, Windows, and Linux configuration.\\
+\textbf{Linked stories} & \UserStoryRef{US-006}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-007 Candidate\label{Table:REQ-F-007}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-007}\\
+\textbf{Candidate statement} & The host subsystem shall exchange sensor data and status with conforming sensor-side implementations and downstream consumers through the documented interface contract without requiring changes to that contract.\\
+\textbf{Linked stories} & \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-008 Candidate\label{Table:REQ-F-008}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-008}\\
+\textbf{Candidate statement} & For each conversion-ready event made observable through the acquisition interface, the host subsystem shall read the corresponding 8-bit sample code and publish it with its validity state.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & REQ-SMP-01\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-009 Candidate\label{Table:REQ-F-009}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-009}\\
+\textbf{Candidate statement} & When buffering capacity is exhausted, the host subsystem shall apply the approved overload policy and expose an indication accounting for discarded samples or acquisition interruptions.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}, \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-F-010 Candidate\label{Table:REQ-F-010}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-F-010}\\
+\textbf{Candidate statement} & During source unavailability or recovery, the host subsystem shall distinguish retained readings from newly acquired readings in its published information.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\subsection{Local Sample Interface}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-I-002 Candidate\label{Table:REQ-I-002}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-I-002}\\
+\textbf{Candidate statement} & For each qualified sample published to the local downstream consumer, the host subsystem shall provide a sample record containing the 8-bit code, validity state, timestamp, and monotonically increasing sequence number.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}, \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & REQ-IF-01\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-I-003 Candidate\label{Table:REQ-I-003}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-I-003}\\
+\textbf{Candidate statement} & The controlled sensor data and status interface contract shall define record encoding, field meanings, validity and availability states, timestamp semantics, sequence-number behavior, and compatibility rules.\\
+\textbf{Linked stories} & \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\subsection{Timing}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-002 Candidate\label{Table:REQ-Q-002}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-002}\\
+\textbf{Candidate statement} & For each conversion-ready event, the host subsystem shall publish the corresponding sample and validity state within TBD publication latency, measured from the event to the defined publication point under the approved workload.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & REQ-TIM-01\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-003 Candidate\label{Table:REQ-Q-003}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-003}\\
+\textbf{Candidate statement} & The timestamp recorded for each sample shall differ from its corresponding conversion-ready event time, measured by a calibrated reference clock, by no more than TBD timestamp error under the approved test conditions.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & REQ-TIM-02\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\subsection{Capacity}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-004 Candidate\label{Table:REQ-Q-004}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-004}\\
+\textbf{Candidate statement} & The host subsystem shall acquire and publish samples without loss under the approved sustained-rate and burst workload envelope.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-005 Candidate\label{Table:REQ-Q-005}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-005}\\
+\textbf{Candidate statement} & The host subsystem shall buffer at least TBD sample records while processing or delivery is delayed under the approved operating conditions.\\
+\textbf{Linked stories} & \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\subsection{Reliability}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-006 Candidate\label{Table:REQ-Q-006}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-006}\\
+\textbf{Candidate statement} & If no new valid sample is published, the host subsystem shall mark the retained output stale no later than TBD interval after publication of the last valid sample.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & REQ-SMP-02\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-007 Candidate\label{Table:REQ-Q-007}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-007}\\
+\textbf{Candidate statement} & Following a source disconnect, the host subsystem shall expose sensor unavailability within TBD detection-and-publication interval under the approved fault conditions.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-007}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-Q-008 Candidate\label{Table:REQ-Q-008}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-Q-008}\\
+\textbf{Candidate statement} & After the source connection is restored and the approved recovery conditions are satisfied, the host subsystem shall resume sample publication within TBD recovery interval.\\
+\textbf{Linked stories} & \UserStoryRef{US-004}, \UserStoryRef{US-005}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\subsection{OMS Architecture and Interface}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-I-004 Candidate\label{Table:REQ-I-004}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-I-004}\\
+\textbf{Candidate statement} & If OMS applicability is approved, the designated mission gateway shall publish the derived sensor-status data product through the program-approved OMS CAL interface using the approved UCI message mapping and service contract for valid, stale, and faulted states.\\
+\textbf{Linked stories} & \UserStoryRef{US-007}, \UserStoryRef{US-008}, \UserStoryRef{US-004}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-004}, \UseCaseRef{UC-005}, \UseCaseRef{UC-006}\\
+\textbf{Lecture alias} & REQ-OMS-01\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{REQ-C-002 Candidate\label{Table:REQ-C-002}}\\
+\toprule\textbf{Field} & \textbf{Description}\\\midrule\endfirsthead
+\toprule\textbf{Field} & \textbf{Description (continued)}\\\midrule\endhead\bottomrule\endlastfoot
+\textbf{Identifier} & \RequirementID{REQ-C-002}\\
+\textbf{Candidate statement} & The system and software architecture documentation shall demonstrate conformance to the applicable provisions of the approved OMS Version 2.5 baseline, identified in the project's OMS applicability assessment.\\
+\textbf{Linked stories} & \UserStoryRef{US-008}\\
+\textbf{Mapped use cases} & \UseCaseRef{UC-006}\\
+\textbf{Lecture alias} & Project-derived candidate.\\
+\textbf{Control fields} & Status: Proposed; priority: TBD; In Version: \NoVersion. Owner: A. Crone; decision date: TBD.\\
+\textbf{Planned checks} & Tests and verification IDs: TBD; evidence and acceptance bounds: TBD. No checks executed.\\
 \end{tabularx}
