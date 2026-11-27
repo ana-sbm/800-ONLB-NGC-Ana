@@ -19,3 +19,39 @@ Dependencies and missing facts are owned in
 Store or reference detailed test and verification evidence here when it would make the main chapters difficult to read. Evidence must identify the artifact, result, environment, date, and product revision.
 \section{Example Evidence Record}
 Test: \textit{TC-001}; Result: \textit{Pass}; Environment: \textit{[browser, operating system, or deployment]}; Revision: \textit{[build ID]}; Evidence: \textit{[link to report, log, screenshot, or automated result]}. Redact personal or production-sensitive data.
+\section{Planned Project Evidence Slots}\label{Section:PlannedProjectEvidence}
+These slots specify future evidence, not collected artifacts. Every slot has
+status \textbf{Not collected}; owner A. Crone; decision date TBD.
+Before a slot can support a result, record the producing check, artifact
+location, product/document revision, environment/configuration, execution date,
+observed result, reviewer and disposition. Those values are currently TBD.
+No placeholder is an evidence file or a passing result.
+
+\begin{tabularx}{\linewidth}{L{2.6cm}L{2.7cm}YL{2.1cm}}
+\caption{Planned Project Evidence Slots\label{Table:PlannedProjectEvidence}}\\
+\toprule\textbf{Producing Check} & \textbf{Target} & \textbf{Required Artifact (Planned)} & \textbf{Collection Status}\\\midrule\endfirsthead
+\toprule\textbf{Producing Check} & \textbf{Target} & \textbf{Required Artifact (Planned)} & \textbf{Collection Status}\\\midrule\endhead\bottomrule\endlastfoot
+\phantomsection\label{PlannedEvidence:VER-010}\VerificationRef{VER-010} & \RequirementRef{REQ-F-004} & Controlled sample/status inputs and captured operator-facing output. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-011}\VerificationRef{VER-011} & \RequirementRef{REQ-F-005} & Correlated acquisition, processing and delivery traces under load. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-012}\VerificationRef{VER-012} & \RequirementRef{REQ-F-006} & Setup records and equivalent behavior results for macOS, Windows and Linux. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-013}\VerificationRef{VER-013} & \RequirementRef{REQ-F-007} & Interface contract, conformance results and sensor-side/consumer substitution records. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-014}\VerificationRef{VER-014} & \RequirementRef{REQ-F-008} & Controlled conversion-ready event log, input codes and corresponding output records. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-015}\VerificationRef{VER-015} & \RequirementRef{REQ-F-009} & Buffer-exhaustion stimulus, overload indications and input/output accounting. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-016}\VerificationRef{VER-016} & \RequirementRef{REQ-F-010} & Disconnect/recovery traces and published records/status. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-017}\VerificationRef{VER-017} & \RequirementRef{REQ-I-002} & Controlled output records and schema/sequence checks. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-018}\VerificationRef{VER-018} & \RequirementRef{REQ-I-003} & Controlled interface document and completed contract checklist. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-019}\VerificationRef{VER-019} & \RequirementRef{REQ-I-004} & Approved service contract/mapping and captured gateway messages after state injection. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-020}\VerificationRef{VER-020} & \RequirementRef{REQ-Q-002} & Correlated ready-event/publication measurements and measurement-uncertainty analysis. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-021}\VerificationRef{VER-021} & \RequirementRef{REQ-Q-003} & Recorded timestamps, calibrated reference-event times and clock/calibration records. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-022}\VerificationRef{VER-022} & \RequirementRef{REQ-Q-004} & Generated input stream, published output and sample accounting. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-023}\VerificationRef{VER-023} & \RequirementRef{REQ-Q-005} & Controlled processing/delivery delay and buffer occupancy/accounting records. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-024}\VerificationRef{VER-024} & \RequirementRef{REQ-Q-006} & Last-valid-publication time, paused/invalid source inputs and stale-state output times. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-025}\VerificationRef{VER-025} & \RequirementRef{REQ-Q-007} & Controlled disconnect time and published unavailability time. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-026}\VerificationRef{VER-026} & \RequirementRef{REQ-Q-008} & Connection restoration, recovery-condition satisfaction and resumed-publication timestamps. & Not collected\\
+\phantomsection\label{PlannedEvidence:VER-027}\VerificationRef{VER-027} & \RequirementRef{REQ-C-002} & Authoritative OMS baseline, applicability assessment, provision-to-artifact compliance matrix and review dispositions. & Not collected\\
+\phantomsection\label{PlannedEvidence:VAL-004}\ValidationRef{VAL-004} & \UserStoryRef{US-004} & Scenario script, expected decisions, observed interpretations/actions and stakeholder feedback/disposition. & Not collected\\
+\phantomsection\label{PlannedEvidence:VAL-005}\ValidationRef{VAL-005} & \UserStoryRef{US-005} & Workload demonstration, correlated traces, developer walkthrough and feedback/disposition. & Not collected\\
+\phantomsection\label{PlannedEvidence:VAL-006}\ValidationRef{VAL-006} & \UserStoryRef{US-006} & Setup observations, configuration records, behavior demonstrations and field-engineer feedback. & Not collected\\
+\phantomsection\label{PlannedEvidence:VAL-007}\ValidationRef{VAL-007} & \UserStoryRef{US-007} & Contract-based walkthrough, substitution records, compatibility findings and stakeholder disposition. & Not collected\\
+\phantomsection\label{PlannedEvidence:VAL-008}\ValidationRef{VAL-008} & \UserStoryRef{US-008} & Applicability assessment, compliance matrix, review minutes, gap dispositions and product-owner decision. & Not collected\\
+\end{tabularx}

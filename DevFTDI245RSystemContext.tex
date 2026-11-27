@@ -8,11 +8,79 @@ Define the host-application boundary and its external dependencies.
 \section{How to Use This Chapter}
 This is the unchanged host-application boundary confirmed by A. Crone.
 The course sensor scenario supplies context, not measured hardware evidence.
+\section{Stakeholder Definitions and Expected Evidence}
+\label{Section:StakeholderDefinitions}
+These working definitions distinguish responsibilities; one person may fill
+more than one role. The story links identify the corresponding draft needs.
+The expected evidence column identifies material to collect to establish the
+beneficiary, desired outcome, and acceptance criteria under
+\hyperref[Section:AIUserStoryContext]{User-Story Context}. It does not report
+completed interviews, observed tests, or approved acceptance criteria.
+Evidence-collection owner: A. Crone. Collection and decision dates: TBD.
+
+\begingroup\small
+\begin{tabularx}{\linewidth}{L{2.8cm}YYY}
+\caption{Stakeholder Definitions and Expected Evidence\label{Table:StakeholderDefinitions}}\\
+\toprule
+\textbf{Stakeholder} & \textbf{Responsibility} & \textbf{Main Concern} & \textbf{Expected Stakeholder Evidence}\\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\small\itshape Stakeholder Definitions and Expected Evidence (continued)}\\
+\toprule
+\textbf{Stakeholder} & \textbf{Responsibility} & \textbf{Main Concern} & \textbf{Expected Stakeholder Evidence}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\small\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\phantomsection\label{Stakeholder:Operator}\textbf{operator}\par\UserStoryRef{US-004} &
+Acts as the mission operator, assessing current sensor values and their
+availability, validity, and age during acquisition. &
+Can I interpret the current reading and decide whether to use it? &
+Operator walkthrough and review of normal, unavailable, invalid, and aging
+readings; observed interpretation of values and status, with a reviewed
+acceptance question and usability decision.\\
+\phantomsection\label{Stakeholder:AcquisitionDeveloper}\textbf{acquisition-developer}\par\UserStoryRef{US-005} &
+Develops acquisition behavior that continues while earlier samples are
+processed and delivered. &
+Can acquisition continue under the agreed workload, with ordering and any
+loss or interruption accounted for? &
+Developer review and traces showing acquisition overlapping processing and
+delivery under an agreed workload; accounting for ordering, loss, and
+interruptions. Workload, buffering, and overload behavior: TBD.\\
+\phantomsection\label{Stakeholder:FieldEngineer}\textbf{field-engineer}\par\UserStoryRef{US-006} &
+Installs, configures, operates, and supports the host subsystem on macOS,
+Windows, and Linux. &
+Can the documented setup produce the agreed acquisition, publication, and
+status behavior on each supported platform? &
+Setup walkthroughs, demonstrations of agreed behavior, and field-engineer
+feedback for all three platforms. Supported operating-system versions and
+driver configurations: TBD.\\
+\phantomsection\label{Stakeholder:MissionIntegrator}\textbf{mission-integrator}\par\UserStoryRef{US-007} &
+Integrates and replaces conforming sensor-side implementations or downstream
+consumers using a documented sensor data and status contract. &
+Can a conforming replacement use the connection without redesign, and can an
+incompatible replacement be identified before use? &
+Controlled interface documentation, representative records and status
+examples, and a reviewed substitution exercise for a sensor-side
+implementation or consumer, including incompatibility detection.
+OMS applicability and interface decisions: TBD.\\
+\phantomsection\label{Stakeholder:ProductOwner}\textbf{product owner}\par\UserStoryRef{US-008} &
+Directs architecture readiness for future mission-system integration. &
+Does the documented architecture satisfy the applicable OMS Version 2.5 baseline provisions? &
+Applicability assessment, compliance matrix, architecture review findings,
+and disposition of gaps. Evidence is planned; authoritative revision and
+assessment details TBD. Owner: A. Crone; decision date: TBD.\\
+\end{tabularx}
+\endgroup
+
 \section{Boundary and Information Flow}
 SP800Project qualifies and publishes sensor data in a host application. The sensor
 and ADC0804 produce a conversion code; a clock/counter provides another input
 to the FT245R data path. The FT245R and host driver are external dependencies.
-The downstream consumer receives published information. The operator is an
+The downstream consumer receives published information. The \hyperref[Stakeholder:Operator]{operator} is an
 external stakeholder; the interaction mechanism is not yet specified.
 Figure~\ref{Figure:SP800Context} records this boundary. It does not prescribe
 a device mode, byte encoding, timing source, or hardware implementation.

@@ -47,8 +47,9 @@ including validity and freshness interpretation.
 \item Identify hardware and board revisions, ADC and counter capture rules,
 counter width and rollover, byte pairing, and data representation. A counter
 input is not evidence of an acquisition timestamp.
-\item Identify the target host operating system, FT245R driver and SDK,
-supported device mode, programming language, compiler, and runtime.
+\item Define supported macOS, Windows, and Linux versions and configurations for
+\UserStoryRef{US-006}, including the FT245R driver and SDK, supported
+device mode, programming language, compiler, and runtime.
 The document-build host is Windows; this does not select the product platform.
 \item Supply controlled datasheets, schematics, interface definitions, and
 hardware access. No hardware performance or compatibility is established.
@@ -62,6 +63,29 @@ delivery policy, and the evidence needed for acceptance. Detailed views,
 resource budgets, and tests remain planned pending these inputs.
 \end{enumerate}
 
+\section{Unresolved Values for the Week 2 Candidate Baseline}
+\label{Section:Week2UnresolvedValues}
+The following register consolidates existing gaps without approving values.
+Every row is Open, owner A. Crone, decision date TBD. A reference to an agreed
+or approved parameter in a candidate remains TBD until its decision is recorded.
+OMS-specific choices are maintained in
+\hyperref[Table:OMSUnresolvedDecisions]{the OMS unresolved-decision register}
+under \ArchitectureRef{ARC-002}. Unknown dates are not scheduled commitments.
+
+\begin{tabularx}{\linewidth}{L{2.7cm}YL{3.2cm}L{1.7cm}L{1.8cm}}
+\caption{Project Unresolved Values\label{Table:ProjectUnresolvedValues}}\\
+\toprule\textbf{Area} & \textbf{Unresolved Values} & \textbf{Related Candidates} & \textbf{Owner} & \textbf{Decision Date}\\\midrule\endfirsthead
+\toprule\textbf{Area} & \textbf{Unresolved Values} & \textbf{Related Candidates} & \textbf{Owner} & \textbf{Decision Date}\\\midrule\endhead\bottomrule\endlastfoot
+Acquisition and qualification & TBD: conversion-ready observability, qualification rules, approved input range. & \RequirementRef{REQ-F-008} & A. Crone & TBD\\
+Local interface & TBD: schema/encoding, field definitions, compatibility rules. & \RequirementRef{REQ-I-002}, \RequirementRef{REQ-I-003}, \RequirementRef{REQ-F-007} & A. Crone & TBD\\
+Timestamp and sequence & TBD: reference event, clock, units, resolution, synchronization, sequence width, initialization, reset, rollover. & \RequirementRef{REQ-I-002}, \RequirementRef{REQ-Q-003} & A. Crone & TBD\\
+Timing & TBD: publication latency, timestamp-error bound, measurement conditions and uncertainty treatment. & \RequirementRef{REQ-Q-002}, \RequirementRef{REQ-Q-003} & A. Crone & TBD\\
+Capacity & TBD: sustained rate, burst rate/duration, buffer capacity, supported interruption, overload and loss-reporting policy. & \RequirementRef{REQ-F-005}, \RequirementRef{REQ-F-009}, \RequirementRef{REQ-Q-004}, \RequirementRef{REQ-Q-005} & A. Crone & TBD\\
+Reliability & TBD: stale interval, disconnect interval, recovery conditions/interval, invalid-sample treatment. & \RequirementRef{REQ-F-010}, \RequirementRef{REQ-Q-006}, \RequirementRef{REQ-Q-007}, \RequirementRef{REQ-Q-008} & A. Crone & TBD\\
+Platform support & TBD: macOS/Windows/Linux versions, drivers, SDKs and configurations. & \RequirementRef{REQ-F-006} & A. Crone & TBD\\
+Operator interaction & TBD: interaction mechanism, age accuracy and update interval. & \RequirementRef{REQ-F-004} & A. Crone & TBD\\
+Verification and validation & TBD: procedures, execution participants, independent reviewers, unresolved acceptance criteria, evidence locations and execution dates. & \hyperref[Table:ProjectVerificationRegister]{Verification plans}; \hyperref[Table:ProjectValidationRegister]{validation plans} & A. Crone & TBD\\
+\end{tabularx}
 \section{Configuration and Publication}
 Editable LaTeX, TikZ, bibliography, build configuration, and AI instructions
 are maintained sources. Build results are document evidence only.

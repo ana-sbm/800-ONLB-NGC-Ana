@@ -1,61 +1,13 @@
-# SP800Project draft 0.3: build and review report
+# SP800Project Step 6 review
 
-Owner: A. Crone. Filename prefix: DevFTDI245R. Review date: November 15, 2026.
+November 22, 2026. Document version 0.10. Owner review pending.
 
-## Result
+Recorded ARC-002 OMS applicability and architecture compatibility as Proposed, preserving inherited ARC-001. Added context, drivers, alternatives, trade-offs, risks, consequences and approval-evidence needs. Added 12 OMS unresolved-decision rows, six pending status mappings, and nine project unresolved-value areas. All open decisions are owned by A. Crone with decision dates TBD. Linked requirements, UC-006, traceability and evidence plans reciprocally.
 
-Corrected review copy compiled successfully to a 125-page PDF using pdfTeX
-1.40.29 (TeX Live 2026). The final log contains no fatal errors, undefined
-references, duplicate-label warnings, overfull boxes, or oversized-float warnings.
-Bibliography, glossary, acronyms, and index were regenerated.
+OMS Version 2.5 remains a proposed target, not an approved authoritative baseline or compliance result. REQ-I-004 (lecture REQ-OMS-01) and REQ-C-002 remain Proposed, with In Version empty set. Verification and validation remain Pending, evidence not collected. No CAL/gateway responsibility was assigned and no host-boundary change was made. Lecture numerical allocations remain teaching values pending project approval.
 
-## Corrections
+Built from authoritative F: sources into the separate F: DevFTDI245RReviewBuild output folder. All six portable TeX Live commands completed: pdflatex, bibtex, makeglossaries, makeindex, pdflatex, pdflatex. Final PDF: 170 pages. Final log has no fatal errors, undefined references, multiply defined labels, overfull boxes or build warnings. Existing underfull-box notices in unchanged guide prose remain.
 
-- Increased context-diagram spacing and kept edge labels clear of boxes.
-- Replaced the removed profile-table target with the existing project decision table.
-- Replaced the empty numbered attribution reference with a named attribution link.
-- Wrapped the embedded-profile prompt as a compact monospaced paragraph.
-- Widened contents numbering and reduced workflow-figure width slightly.
-- Added explicit line-break opportunities to long history link labels.
-- Recorded the correction in document history and the AI Prompt Log.
+Verified 2,007 internal GoTo targets with zero missing targets. Rendered and visually checked the new decision and unresolved-value register pages. Printed pages 8-9 contain project TBDs; pages 52-55 contain the proposed OMS decision, alternatives, OMS TBDs and mapping questions. The verified PDF and log were copied to the project root and review outputs.
 
-No project scope or requirements were changed. Draft 0.3 remains subject to
-A. Crone's review and is not an accepted baseline or implementation release.
-
-## Commands
-
-In SP800-CorrectedSources, using the portable tools at
-F:/Documents/2026F-SPE-800-ONLB-NGC/SP800BuildTools/bin/windows:
-
-1. pdflatex -interaction=nonstopmode -halt-on-error DevFTDI245RManual.tex
-2. bibtex DevFTDI245RManual
-3. makeglossaries DevFTDI245RManual
-4. makeindex DevFTDI245RManual.idx
-5. pdflatex -interaction=nonstopmode -halt-on-error DevFTDI245RManual.tex
-6. pdflatex -interaction=nonstopmode -halt-on-error DevFTDI245RManual.tex
-
-Two further LaTeX passes followed the final prompt-format refinement.
-
-## Verification
-
-Named internal PDF links were checked against PDF destinations in the final
-build: 1126 links, no missing destinations. Targeted pages were rendered for visual
-inspection, including the context diagram, attribution, profile decisions,
-AI guide link, embedded-profile prompt, contents, workflow figure, and history.
-The repaired pages show no label collisions, clipping, or margin overflow.
-This is a document review, not hardware testing or stakeholder validation.
-
-## Location and original project
-
-The original F:/Documents/2026F-SPE-800-ONLB-NGC/ArchitectureProject-2.33
-project could be read but not edited from this automation session. The corrected
-source copy is SP800-CorrectedSources in the review output folder. The supplied
-ZIP contains matching editable sources, PDF, log, and this report. Copy its
-contents into your F: project to adopt the corrections, keeping a backup first.
-No Git commit, publication, or baseline acceptance has occurred.
-
-Final PDF SHA-256: 219297b87bc36693ff14b2badb1f3b29109eb37de1b5c52304c453fdefd3f008
-
-## Metadata update
-
-Project name changed to SP800Project. Organization set exactly to Stephens University, 2026F SPE 800-ONLB-NGC. Current content and PDF metadata were updated; earlier history retains the previous name. The full build was rerun and the title, abstract, context diagram, and development plan were visually checked. The final log is clear.
+All low-priority tasks remain deferred, including FTDI/CAL Tier 1 research, budget/schedule rationale, bibliography review, broad pagination review and Semantic Versioning. Version 0.10 continues the current document revision sequence. No version-control actions were performed. No product compliance or stakeholder acceptance is claimed.
